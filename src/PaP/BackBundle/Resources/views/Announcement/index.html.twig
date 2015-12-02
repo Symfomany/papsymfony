@@ -1,0 +1,83 @@
+{% extends "BackBundle::layout.html.twig" %}
+
+
+{% block content %}
+    {% for message in app.session.flashbag.get("success") %}
+
+        <div class="alert alert-success alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            <h4>	<i class="icon fa fa-check"></i> Yay!</h4>
+            {{ message }}
+        </div>
+
+    {% endfor %}
+
+    <div class="panel">
+        <div class="panel-body pn">
+            <div class="table-responsive">
+                <table class="table admin-form theme-warning tc-checkbox-1 fs13">
+                    <thead>
+                    <tr class="bg-light">
+                        <th class="text-center">Select</th>
+                        <th class="">Id</th>
+                        <th class="">Image</th>
+                        <th class="">Title</th>
+                        <th class="">Ref</th>
+                        <th class="">Price</th>
+
+                        <th class="text-right"></th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for offer in offers %}
+
+                        <tr>
+                            <td class="text-center">
+                                <label class="option block mn">
+                                    <input type="checkbox" name="mobileos" value="FR">
+                                    <span class="checkbox mn"></span>
+                                </label>
+                            </td>
+
+                            <td class="">{{ offer.id }}</td>
+                            <td class=""><img class="img-responsive img-circle" src="{{ asset("uploads/announcement/" ~ offer.photo) }}" style="width: 50px; height: 50px" /></td>
+                            <td class="">{{ offer.title }}</td>
+                            <td class="">{{ offer.ref }}</td>
+                            <td class="">{{ offer.price }}</td>
+
+
+                            <td class="menu-action">
+
+                                <a href="{{  path("back_announcement_show",{'offer':offer.id} ) }}" data-original-title="view" data-toggle="tooltip" data-placement="top" class="btn menu-icon vd_bd-green vd_green">
+                                    <i class="fa fa-eye"></i>
+                                </a>
+
+                                <a href="{{  path("back_announcement_edit",{'offer':offer.id} ) }}" data-original-title="edit" data-toggle="tooltip" data-placement="top" class="btn menu-icon vd_bd-yellow vd_yellow">
+                                    <i class="fa fa-pencil"></i>
+                                </a>
+
+                                <a href="{{  path("back_announcement_delete",{'id':offer.id} ) }}" data-original-title="delete" data-toggle="tooltip" data-placement="top" class="btn menu-icon vd_bd-red vd_red delete">
+                                    <i class="fa fa-times"></i>
+                                </a>
+
+                                <a href="{{  path("back_announcement_activate",{'id':offer.id} ) }}" data-original-title="view" data-toggle="tooltip" data-placement="top" class="btn menu-icon vd_bd-green vd_green">
+                                    {% if offer.activate %}
+                                        <i class="fa fa-check-square"></i>
+                                    {% else %}
+                                        <i class="fa fa-check-square-o"></i>
+                                    {% endif %}
+                                </a>
+
+                            </td>
+
+                        </tr>
+                    {% endfor %}
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

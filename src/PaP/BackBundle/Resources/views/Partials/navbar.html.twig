@@ -1,0 +1,51 @@
+
+
+        <!-- Start: Sidebar Menu -->
+        <ul class="nav sidebar-menu">
+            <li class="sidebar-label pt20">Menu</li>
+
+
+            <li>
+                <a class="accordion-toggle" href="#">
+                    <span class="fa fa-columns"></span>
+                    <span class="sidebar-title">Pages</span>
+                    <span class="caret"></span>
+                </a>
+                <ul class="nav sub-nav">
+                    <li>
+                        <a  href="{{ path("back_announcement_index") }}">
+                            <span class="fa-eye"></span>
+                            All
+                            <span class="caret"></span>
+                        </a>
+
+                    </li>
+                    <li>
+                        <a href="{{ path("back_announcement_create") }}">
+                            <span class="fa fa-pencil"></span>
+                            Create
+                            <span class="caret"></span>
+                        </a>
+
+                    </li>
+
+                </ul>
+            </li>
+
+
+
+        </ul>
+        <!-- End: Sidebar Menu -->
+
+        <!-- Start: Sidebar Collapse Button -->
+        <div class="sidebar-toggle-mini">
+            <a href="{{ path('logout') }}">
+                <span class="fa fa-sign-out"></span>
+            </a>
+        </div>
+        <!-- End: Sidebar Collapse Button -->
+
+    </div>
+    <!-- End: Sidebar Left Content -->
+
+</aside>

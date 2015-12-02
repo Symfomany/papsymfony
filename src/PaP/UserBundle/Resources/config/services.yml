@@ -1,0 +1,8 @@
+services:
+  pap.backbundle.announcement.listener:
+        class: PaP\BackBundle\Listener\AnnouncementListener
+        arguments: ["@doctrine_mongodb.odm.default_document_manager", "@security.context"]
+        tags:
+            - { name: doctrine.event_listener, event: postUpdate, method: postUpdate }
+            - { name: doctrine.event_listener, event: postPersist, method: postPersist }
+            - { name: doctrine.event_listener, event: preRemove, method: preRemove }

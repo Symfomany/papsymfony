@@ -1,0 +1,341 @@
+{% extends "BackBundle::layout.html.twig" %}
+
+
+{% block stylesheets %}
+    {{ parent() }}
+
+    <!-- FullCalendar Plugin CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('vendor/plugins/fullcalendar/fullcalendar.min.css') }}">
+
+{% endblock %}
+
+{% block content %}
+
+    <!-- begin: .tray-center -->
+    <div class="tray tray-center">
+
+        <!-- dashboard tiles -->
+        <div class="row">
+            <div class="col-sm-4 col-xl-3">
+                <div class="panel panel-tile text-center br-a br-grey">
+                    <div class="panel-body">
+                        <h1 class="fs30 mt5 mbn">1,426</h1>
+                        <h6 class="text-system">ANNONCES</h6>
+                    </div>
+                    <div class="panel-footer br-t p12">
+                  <span class="fs11">
+                    <i class="fa fa-arrow-up pr5"></i> 3% INCREASE
+                    <b>1W AGO</b>
+                  </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 col-xl-3">
+                <div class="panel panel-tile text-center br-a br-grey">
+                    <div class="panel-body">
+                        <h1 class="fs30 mt5 mbn">63,262</h1>
+                        <h6 class="text-success">PHOTOS</h6>
+                    </div>
+                    <div class="panel-footer br-t p12">
+                  <span class="fs11">
+                    <i class="fa fa-arrow-up pr5"></i> 2.7% INCREASE
+                    <b>1W AGO</b>
+                  </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 col-xl-3">
+                <div class="panel panel-tile text-center br-a br-grey">
+                    <div class="panel-body">
+                        <h1 class="fs30 mt5 mbn">248</h1>
+                        <h6 class="text-warning">UTILISATEURS</h6>
+                    </div>
+                    <div class="panel-footer br-t p12">
+                  <span class="fs11">
+                    <i class="fa fa-arrow-up pr5 text-success"></i> 1% INCREASE
+                    <b>1W AGO</b>
+                  </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3 col-xl-3 visible-xl">
+                <div class="panel panel-tile text-center br-a br-grey">
+                    <div class="panel-body">
+                        <h1 class="fs30 mt5 mbn">6,718</h1>
+                        <h6 class="text-danger">CATEGORIES</h6>
+                    </div>
+                    <div class="panel-footer br-t p12">
+                  <span class="fs11">
+                    <i class="fa fa-arrow-down pr5 text-danger"></i> 6% DECREASE
+                    <b>1W AGO</b>
+                  </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+       <div class="row">
+           <div class="col-md-12 admin-grid" id="grid-1">
+
+               <!-- Calendar Widget -->
+               <div class="panel panel-widget calendar-widget calendar-alt" id="p02">
+                   <div class="panel-heading ui-sortable-handle">
+                    <span class="panel-icon">
+                      <i class="fa fa-calendar-o"></i>
+                    </span>
+                       <span class="panel-title"> Calendar Widget</span>
+                       <span class="panel-controls">
+                       <a href="#" class="panel-control-remove"></a>
+                       </div>
+                   <div class="panel-body bg-white p15">
+                       <div id="calendar-widget" class="fc fc-ltr fc-unthemed"><div class="fc-toolbar"></div>
+                   </div>
+               </div>
+
+               <!-- Task Widget -->
+               <div class="panel panel-widget task-widget task-alt ui-sortable" id="p05">
+                   <div class="panel-heading cursor">
+                    <span class="panel-icon">
+                      <i class="fa fa-cog"></i>
+                    </span>
+                       <span class="panel-title"> Task-List Widget</span>
+                       <span class="panel-controls"><a href="#" class="panel-control-loader"></a><a href="#" class="panel-control-remove"></a><a href="#" class="panel-control-title"></a><a href="#" class="panel-control-color"></a><a href="#" class="panel-control-collapse"></a><a href="#" class="panel-control-fullscreen"></a></span></div>
+                   <div class="panel-body p15">
+                       <h5 class="mtn mb10"><i class="fa fa-bell text-warning pr5"></i> Personal Tasks</h5>
+                       <ul class="task-list task-current">
+                           <li class="task-item success">
+                               <div class="task-handle">
+                                   <div class="checkbox-custom">
+                                       <input type="checkbox" id="task1">
+                                       <label for="task1"></label>
+                                   </div>
+                               </div>
+                               <div class="task-desc">Create documentation for launch</div>
+                               <div class="task-menu ui-sortable-handle"></div>
+                           </li>
+                           <li class="task-item primary">
+                               <div class="task-handle">
+                                   <div class="checkbox-custom">
+                                       <input type="checkbox" id="task2">
+                                       <label for="task2"></label>
+                                   </div>
+                               </div>
+                               <div class="task-desc">Add new servers to design board</div>
+                               <div class="task-menu ui-sortable-handle"></div>
+                           </li>
+                           <li class="task-item info">
+                               <div class="task-handle">
+                                   <div class="checkbox-custom">
+                                       <input type="checkbox" id="task3">
+                                       <label for="task3"></label>
+                                   </div>
+                               </div>
+                               <div class="task-desc">Finish building prototype for Sony</div>
+                               <div class="task-menu ui-sortable-handle"></div>
+                           </li>
+                           <li class="task-item warning">
+                               <div class="task-handle">
+                                   <div class="checkbox-custom">
+                                       <input type="checkbox" id="task4">
+                                       <label for="task4"></label>
+                                   </div>
+                               </div>
+                               <div class="task-desc">Order new building supplies for Microsoft</div>
+                               <div class="task-menu ui-sortable-handle"></div>
+                           </li>
+                           <li class="task-item system">
+                               <div class="task-handle">
+                                   <div class="checkbox-custom">
+                                       <input type="checkbox" id="task5">
+                                       <label for="task5"></label>
+                                   </div>
+                               </div>
+                               <div class="task-desc">Add new servers to design board</div>
+                               <div class="task-menu ui-sortable-handle"></div>
+                           </li>
+                       </ul>
+                       <h5 class="mt15 mb10"><i class="fa fa-check text-success pr5"></i>Completed Tasks</h5>
+                       <ul class="task-list task-completed">
+                           <li class="task-item danger item-checked">
+                               <div class="task-handle">
+                                   <div class="checkbox-custom">
+                                       <input type="checkbox" checked="" id="task7">
+                                       <label for="task7"></label>
+                                   </div>
+                               </div>
+                               <div class="task-desc">Finish building prototype for Sony</div>
+                               <div class="task-menu ui-sortable-handle"></div>
+                           </li>
+                           <li class="task-item system item-checked">
+                               <div class="task-handle">
+                                   <div class="checkbox-custom">
+                                       <input type="checkbox" checked="" id="task8">
+                                       <label for="task8"></label>
+                                   </div>
+                               </div>
+                               <div class="task-desc">Order new building supplies for Microsoft</div>
+                               <div class="task-menu ui-sortable-handle"></div>
+                           </li>
+                           <li class="task-item item-alert item-checked">
+                               <div class="task-handle">
+                                   <div class="checkbox-custom">
+                                       <input type="checkbox" checked="" id="task9">
+                                       <label for="task9"></label>
+                                   </div>
+                               </div>
+                               <div class="task-desc">Finish building prototype for Sony</div>
+                               <div class="task-menu ui-sortable-handle"></div>
+                           </li>
+                           <li class="task-item info item-checked">
+                               <div class="task-handle">
+                                   <div class="checkbox-custom">
+                                       <input type="checkbox" checked="" id="task10">
+                                       <label for="task10"></label>
+                                   </div>
+                               </div>
+                               <div class="task-desc">Order new building supplies for Microsoft</div>
+                               <div class="task-menu ui-sortable-handle"></div>
+                           </li>
+                       </ul>
+                   </div>
+
+               </div>
+
+               <!-- Search List -->
+               <div class="panel" id="p17">
+                   <div class="panel-heading ui-sortable-handle">
+                       <span class="panel-title">Crawler List</span>
+                       <span class="panel-controls"><a href="#" class="panel-control-loader"></a><a href="#" class="panel-control-remove"></a><a href="#" class="panel-control-title"></a><a href="#" class="panel-control-color"></a><a href="#" class="panel-control-collapse"></a><a href="#" class="panel-control-fullscreen"></a></span></div>
+                   <div class="panel-body pn">
+                       <table class="table mbn tc-med-1 tc-bold-last">
+                           <thead>
+                           <tr class="hidden">
+                               <th>#</th>
+                               <th>First Name</th>
+                           </tr>
+                           </thead>
+                           <tbody>
+                           <tr>
+                               <td>
+                                   <span class="favicons google va-t mr10"></span>pages.com/img/15</td>
+                               <td>7%</td>
+                           </tr>
+                           <tr>
+                               <td>
+                                   <span class="favicons yahoo va-t mr10"></span>pages.com/popular</td>
+                               <td>14%</td>
+                           </tr>
+                           <tr>
+                               <td>
+                                   <span class="favicons google va-t mr10"></span>pages.com/news/3</td>
+                               <td>31%</td>
+                           </tr>
+                           <tr>
+                               <td>
+                                   <span class="favicons bing va-t mr10"></span>pages.com/featured/16</td>
+                               <td>22%</td>
+                           </tr>
+                           </tbody>
+                       </table>
+                   </div>
+               </div>
+
+               <!-- Browser List -->
+               <div class="panel" id="p18">
+                   <div class="panel-heading ui-sortable-handle">
+                       <span class="panel-title">Browser List</span>
+                       <span class="panel-controls"><a href="#" class="panel-control-loader"></a><a href="#" class="panel-control-remove"></a><a href="#" class="panel-control-title"></a><a href="#" class="panel-control-color"></a><a href="#" class="panel-control-collapse"></a><a href="#" class="panel-control-fullscreen"></a></span></div>
+                   <div class="panel-body pn">
+                       <table class="table mbn tc-med-1 tc-bold-2">
+                           <thead>
+                           <tr class="hidden">
+                               <th>#</th>
+                               <th>First Name</th>
+                           </tr>
+                           </thead>
+                           <tbody>
+                           <tr>
+                               <td>
+                                   <span class="favicons chrome va-t mr10"></span>United States</td>
+                               <td>39%</td>
+                           </tr>
+                           <tr>
+                               <td>
+                                   <span class="favicons firefox va-t mr10"></span>Germany</td>
+                               <td>43%</td>
+                           </tr>
+                           <tr>
+                               <td>
+                                   <span class="favicons ie va-t mr10"></span>France</td>
+                               <td>14%</td>
+                           </tr>
+                           <tr>
+                               <td>
+                                   <span class="favicons safari va-t mr10"></span>Spain</td>
+                               <td>3%</td>
+                           </tr>
+                           </tbody>
+                       </table>
+                   </div>
+               </div>
+
+               <div class="panel preserve-grid"></div></div>
+
+       </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <!-- FullCalendar Plugin + moment Dependency -->
+    <script src="{{ asset('vendor/plugins/fullcalendar/lib/moment.min.js') }}"></script>
+    <script src="{{ asset('vendor/plugins/fullcalendar/fullcalendar.min.js') }}"></script>
+
+    <script>
+        $(document).ready(function(){
+
+            // Init plugins for ".calendar-widget"
+            // plugins: FullCalendar
+            //
+            $('#calendar-widget').fullCalendar({
+                // contentHeight: 397,
+                editable: true,
+                events: [{
+                    title: 'Sony Meeting',
+                    start: '2015-05-1',
+                    end: '2015-05-3',
+                    className: 'fc-event-success',
+                }, {
+                    title: 'Conference',
+                    start: '2015-05-11',
+                    end: '2015-05-13',
+                    className: 'fc-event-warning'
+                }, {
+                    title: 'Lunch Testing',
+                    start: '2015-05-21',
+                    end: '2015-05-23',
+                    className: 'fc-event-primary'
+                },
+                ],
+                eventRender: function(event, element) {
+                    // create event tooltip using bootstrap tooltips
+                    $(element).attr("data-original-title", event.title);
+                    $(element).tooltip({
+                        container: 'body',
+                        delay: {
+                            "show": 100,
+                            "hide": 200
+                        }
+                    });
+                    // create a tooltip auto close timer
+                    $(element).on('show.bs.tooltip', function() {
+                        var autoClose = setTimeout(function() {
+                            $('.tooltip').fadeOut();
+                        }, 3500);
+                    });
+                }
+            });
+
+
+        });
+    </script>
+{% endblock %}

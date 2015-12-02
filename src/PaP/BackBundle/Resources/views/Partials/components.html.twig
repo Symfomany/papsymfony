@@ -1,0 +1,13 @@
+{% block sendform %}
+    <div class="panel-footer text-right col-md-12">
+        <button type="submit" class="button btn-primary ladda-button"><i class="glyphicon glyphicon-floppy-saved"></i> Save my annoucement </button>
+    </div>
+{% endblock%}
+
+{% macro sendform(title) %}
+    <div class="panel-footer text-right col-md-12">
+        <button type="submit" class="col-md-12 button btn-primary ladda-button"><i class="glyphicon glyphicon-floppy-saved"></i>
+            {{ title }}
+        </button>
+    </div>
+{% endmacro %}

@@ -1,0 +1,53 @@
+
+back_announcement_index:
+    path:     /
+    defaults: { _controller: BackBundle:Announcement:index }
+
+back_announcement_index:
+    path:     /index
+    defaults: { _controller: BackBundle:Announcement:index }
+
+
+back_announcement_ajax:
+    path:     /ajax
+    defaults: { _controller: BackBundle:Announcement:ajax }
+
+
+back_announcement_removeajax:
+    path:     /removeajax/{notif}
+    defaults: { _controller: BackBundle:Announcement:removeajax }
+
+
+back_announcement_show:
+    path:     /show/{offer}
+    defaults: { _controller: BackBundle:Announcement:show }
+    requirements:
+        id: \d+
+        method: GET
+
+back_announcement_create:
+    path:     /create
+    defaults: { _controller: BackBundle:Announcement:create }
+    requirements:
+        method: GET|POST
+
+back_announcement_edit:
+    path:     /edit/{offer}
+    defaults: { _controller: BackBundle:Announcement:edit }
+    requirements:
+        id: \d+
+        method: GET|POST
+
+back_announcement_delete:
+    path:     /delete/{id}
+    defaults: { _controller: BackBundle:Announcement:delete }
+    requirements:
+        id: \d+
+        method: POST|DELETE
+
+back_announcement_activate:
+    path:     /activate/{id}
+    defaults: { _controller: BackBundle:Announcement:activate }
+    requirements:
+        id: \d+
+        method: GET

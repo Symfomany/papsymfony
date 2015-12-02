@@ -1,0 +1,221 @@
+{{ form_start(formOffer,{'attr':{novalidate:"novalidate", enctype: "multipart/form-data"}}) }}
+<div class="panel-body bg-light">
+
+    <div class="section-divider mt20 mb40">
+        <span> New Announcement </span>
+    </div>
+
+
+    {{ form_errors(formOffer) }}
+    <div class="section">
+        <label>Selectionner l'administrateur</label>
+        {{ form_widget(formOffer.user) }}
+        {{ form_errors(formOffer.user) }}
+    </div>
+
+    <div class="section row" id="spy1">
+        <div class="col-md-12">
+            <label for="{{ formOffer.title.vars.id }}" class="field prepend-icon">
+                <input type="text" id="{{ formOffer.title.vars.id }}" name="{{ formOffer.title.vars.full_name }}"  class="gui-input" placeholder="{{ formOffer.title.vars.name }}..." value="{{ formOffer.title.vars.value }}">
+                <label for="{{ formOffer.title.vars.id }}" class="field-icon">
+                    <i class="fa fa-user"></i>
+                </label>
+            </label>
+            {{- form_errors(formOffer.title) -}}
+        </div>
+        <!-- end section -->
+    </div>
+
+    <div class="section" id="spy3">
+        <label for="{{ formOffer.content.vars.id }}" class="field prepend-icon">
+            <label for="comment" class="field prepend-icon">
+                            <textarea class="summernote" id="{{ formOffer.content.vars.id }}" name="{{ formOffer.content.vars.full_name }}" placeholder="Your announcement ...">
+                                {{ formOffer.content.vars.value }}
+                            </textarea>
+            </label>
+            {{- form_errors(formOffer.content) -}}
+    </div>
+
+
+    <div class="section row" id="spy1">
+        <div class="col-md-6">
+            <label for="{{ formOffer.price.vars.id }}" class="field prepend-icon">
+                <input type="text" id="{{ formOffer.price.vars.id }}" name="{{ formOffer.price.vars.full_name }}" id="{{ formOffer.price.vars.id }}" class="money gui-input" placeholder="{{ formOffer.price.vars.name }}..." value="{{ formOffer.price.vars.value }}">
+                <label for="{{ formOffer.price.vars.id }}" class="field-icon">
+                    <i class="fa fa-usd"></i>
+                </label>
+            </label>
+            {{- form_errors(formOffer.price) -}}
+        </div>
+
+
+        <div class="col-md-6">
+            <label for="{{ formOffer.ref.vars.id }}" class="field prepend-icon">
+                <input type="text" id="{{ formOffer.ref.vars.id }}" name="{{ formOffer.ref.vars.full_name }}" id="{{ formOffer.ref.vars.id }}" class="ref gui-input" placeholder="{{ formOffer.ref.vars.name }}..." value="{{ formOffer.ref.vars.value }}">
+                <label for="{{ formOffer.ref.vars.id }}" class="field-icon">
+                    <i class="fa fa-list-ol"></i>
+                </label>
+            </label>
+            {{- form_errors(formOffer.ref) -}}
+        </div>
+
+        <!-- end section -->
+    </div>
+    <!-- end .section row section -->
+
+    <div class="section row" id="spy1">
+        <div class="col-md-12">
+
+            <label for="{{ formOffer.address.vars.id }}" class="field prepend-icon">
+                <input type="text" id="{{ formOffer.address.vars.id }}" name="{{ formOffer.address.vars.full_name }}" id="{{ formOffer.address.vars.id }}" class="gui-input" placeholder="{{ formOffer.address.vars.name }}..." value="{{ formOffer.address.vars.value }}">
+                <label for="{{ formOffer.address.vars.id }}" class="field-icon">
+                    <i class="fa fa-building"></i>
+                </label>
+            </label>
+            {{- form_errors(formOffer.address) -}}
+        </div>
+        <!-- end section -->
+    </div>
+    <div class="section row" id="spy1">
+        <div class="col-md-4">
+            <label for="{{ formOffer.city.vars.id }}" class="field prepend-icon">
+                <input type="text" id="{{ formOffer.city.vars.id }}" name="{{ formOffer.city.vars.full_name }}" id="{{ formOffer.city.vars.id }}" class="gui-input" placeholder="{{ formOffer.city.vars.name }}..." value="{{ formOffer.city.vars.value }}">
+                <label for="{{ formOffer.city.vars.id }}" class="field-icon">
+                    <i class="fa fa-location-arrow"></i>
+                </label>
+            </label>
+            {{- form_errors(formOffer.city) -}}
+        </div>
+
+
+        <div class="col-md-4">
+            <label for="{{ formOffer.cp.vars.id }}" class="field prepend-icon">
+                <input type="text" id="{{ formOffer.cp.vars.id }}" name="{{ formOffer.cp.vars.full_name }}" id="{{ formOffer.cp.vars.id }}" class="gui-input cp" placeholder="{{ formOffer.cp.vars.name }}..." value="{{ formOffer.cp.vars.value }}">
+                <label for="{{ formOffer.cp.vars.id }}" class="field-icon">
+                    <i class="fa fa-location-arrow"></i>
+                </label>
+            </label>
+            {{- form_errors(formOffer.cp) -}}
+        </div>
+
+        <div class="col-md-4">
+            <label for="{{ formOffer.country.vars.id }}" class="field prepend-icon">
+                <input type="text" id="{{ formOffer.country.vars.id }}" name="{{ formOffer.country.vars.full_name }}" id="{{ formOffer.country.vars.id }}" class="gui-input" placeholder="{{ formOffer.country.vars.name }}..." value="{{ formOffer.country.vars.value }}">
+                <label for="{{ formOffer.country.vars.id }}" class="field-icon">
+                    <i class="fa fa-location-arrow"></i>
+                </label>
+            </label>
+            {{- form_errors(formOffer.country) -}}
+        </div>
+
+        <!-- end section -->
+    </div>
+
+
+    <div class="section row" id="spy1">
+        <div class="col-md-10">
+            {#<label class="field select">#}
+            {#<select id="{{ formOffer.type.vars.id }}" name="{{ formOffer.type.vars.full_name }}">#}
+            {#<option value="">Type...</option>#}
+            {#{% for type in formOffer.type.vars.choices %}#}
+            {#<option value="{{ type.value }}">{{ type.label }}</option>#}
+            {#{% endfor %}#}
+            {#</select>#}
+            {#<i class="arrow double"></i>#}
+            {#</label>#}
+            {{- form_widget(formOffer.type) -}}
+            {{- form_errors(formOffer.type) -}}
+        </div>
+        {#{{ dump(formOffer.energyLabel) }}#}
+        <div class="col-md-2">
+            {#<label class="field select">#}
+            {#<select id="{{ formOffer.energyLabel.vars.id }}" name="{{ formOffer.energyLabel.vars.full_name }}">#}
+            {#<option value="">Energy...</option>#}
+            {#{% for energy in formOffer.energyLabel.vars.choices %}#}
+            {#<option value="{{ energy.value }}">{{ energy.label }}</option>#}
+            {#{% endfor %}#}
+            {#</select>#}
+            {#<i class="arrow double"></i>#}
+            {#</label>#}
+            {{- form_widget(formOffer.energyLabel) -}}
+            {{- form_errors(formOffer.energyLabel) -}}
+        </div>
+
+    </div>
+    <!-- end section -->
+
+    <div class="section row" id="spy1">
+        <div class="col-md-4">
+            <label for="{{ formOffer.surface.vars.id }}" class="field prepend-icon">
+                <input type="text" id="{{ formOffer.surface.vars.id }}" name="{{ formOffer.surface.vars.full_name }}" id="{{ formOffer.surface.vars.id }}" class="surface gui-input" placeholder="{{ formOffer.surface.vars.name }}..." value="{{ formOffer.surface.vars.value }}">
+                <label for="{{ formOffer.surface.vars.id }}" class="field-icon">
+                    <i class="fa fa-home"></i>
+                </label>
+            </label>
+            {{- form_errors(formOffer.surface) -}}
+        </div>
+
+
+        <div class="col-md-4">
+            <label for="{{ formOffer.nbrooms.vars.id }}" class="field prepend-icon">
+                <input type="text" id="{{ formOffer.nbrooms.vars.id }}" name="{{ formOffer.nbrooms.vars.full_name }}" id="{{ formOffer.nbrooms.vars.id }}" class="nbrooms gui-input" placeholder="{{ formOffer.nbrooms.vars.name }}..." value="{{ formOffer.nbrooms.vars.value }}">
+                <label for="{{ formOffer.nbrooms.vars.id }}" class="field-icon">
+                    <i class="fa fa-home"></i>
+                </label>
+            </label>
+            {{- form_errors(formOffer.nbrooms) -}}
+        </div>
+
+        <div class="col-md-4">
+            <label for="{{ formOffer.bedrooms.vars.id }}" class="field prepend-icon">
+                <input type="text" id="{{ formOffer.bedrooms.vars.id }}" name="{{ formOffer.bedrooms.vars.full_name }}" id="{{ formOffer.bedrooms.vars.id }}" class="bedrooms gui-input" placeholder="{{ formOffer.bedrooms.vars.name }}..." value="{{ formOffer.bedrooms.vars.value }}">
+                <label for="{{ formOffer.bedrooms.vars.id }}" class="field-icon">
+                    <i class="fa fa-bed"></i>
+                </label>
+            </label>
+            {{- form_errors(formOffer.bedrooms) -}}
+        </div>
+
+        <!-- end section -->
+    </div>
+
+
+    <div class="section" id="spy2">
+        <label for="file1" class="field file">
+            <span class="button btn-primary"> Choose File </span>
+            {{- form_widget(formOffer.file, {'attr': {'class' : 'gui-file', 'id': 'file1'}}) -}}
+            <input type="text" class="gui-input" id="uploader1" placeholder="no file selected" readonly>
+        </label>
+    </div>
+    <!-- end  section -->
+
+    <!-- end  section -->
+
+
+    <!-- end section -->
+
+    <div class="col-md-6 pl40">
+        <div class="option-group field">
+
+            <label class="block mt15 option option-primary">
+                {{- form_widget(formOffer.activate) -}}
+                <span class="checkbox"></span> Voir l'annonce active
+            </label>
+
+        </div>
+    </div>
+
+    <div class="section row" id="spy1">
+        <div class="col-md-12">
+        </div>
+    </div>
+
+    <hr />
+    <!-- end .form-body section -->
+    {{ components.sendform('Save my add') }}
+
+
+    <!-- end .form-footer section -->
+    {{ form_widget(formOffer._token) }}
+
+    </form>
