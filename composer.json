@@ -1,5 +1,5 @@
 {
-    "name": "PaPSymfony",
+    "name": "pap/symfony",
     "description": "Project built in Symfony 2",
     "license": "MIT",
     "type": "project",

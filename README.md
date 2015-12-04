@@ -6,3 +6,8 @@ Deploy on plateform.sh
 
 [![Build Status](https://travis-ci.org/Symfomany/papsymfony.svg?branch=master)](https://travis-ci.org/Symfomany/papsymfony)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Symfomany/papsymfony/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/Symfomany/papsymfony/?branch=master)
+
+
+![GitHub Logo](/screen/img1.png)
+![GitHub Logo](/screen/img2.png)
+Format: ![Alt Text](url)

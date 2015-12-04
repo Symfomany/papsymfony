@@ -4,20 +4,22 @@ namespace PaP\BackBundle\Form\Handler;
 
 use Doctrine\ORM\EntityManager;
 use PaP\BackBundle\Entity\Announcement;
-use PaP\BackBundle\Form\AnnouncementType;
 use Symfony\Component\Form\FormFactory;
 use Symfony\Component\HttpFoundation\RequestStack;
 
+/**
+ * Class AnnouncementHandler
+ * @package PaP\BackBundle\Form\Handler
+ */
 class AnnouncementHandler
-
 {
+
 
     protected $formfactory;
     protected $request;
     protected $em;
     protected $announcement;
     protected $form;
-
 
 
     /**
