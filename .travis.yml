@@ -13,7 +13,6 @@ env:
 
 before_script:
   - /home/travis/.phpenv/versions/5.6/bin/composer self-update
-  - composer install
   - /home/travis/.phpenv/versions/5.6/bin/composer self-update
   - echo "extension=mongo.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
   - COMPOSER_ROOT_VERSION=dev-master
@@ -21,6 +20,7 @@ before_script:
   - composer require symfony/symfony:${SYMFONY_VERSION} --no-update
   - composer require doctrine/mongodb-odm:"1.0.*@dev" --no-update
   - composer require doctrine/mongodb-odm-bundle:"3.0.*@dev" --no-update
+  - composer install
 
 
 
