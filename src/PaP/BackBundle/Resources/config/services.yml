@@ -4,5 +4,10 @@ services:
         arguments: ["@form.factory", "@request_stack", "@doctrine.orm.entity_manager"]
         scope: request
         public: true
+    notification_handler:
+        class: PaP\BackBundle\Notification\Notification
+        arguments: ["@form.factory", "@request_stack", "@doctrine.orm.entity_manager"]
+        scope: request
+        public: true
 
 

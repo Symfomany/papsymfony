@@ -23,8 +23,10 @@
         "doctrine/doctrine-migrations-bundle": "^1.0",
         "snc/redis-bundle": "^1.1",
         "rase/socket.io-emitter": "^0.7.0",
-        "friendsofsymfony/elastica-bundle": "^3.1"
+        "friendsofsymfony/elastica-bundle": "dev-master",
+        "ruflin/elastica": "dev-master"
     },
+    "minimum-stability" :  "dev",
     "require-dev": {
         "sensio/generator-bundle": "~3.0",
         "symfony/phpunit-bridge": "~2.7",

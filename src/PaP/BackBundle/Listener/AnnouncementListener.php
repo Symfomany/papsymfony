@@ -112,10 +112,11 @@ class AnnouncementListener{
         $redis->connect('127.0.0.1', '6379');
         $emitter = new Emitter($redis);
 
+        $now = new \DateTime('now');
         // Emit a notification on channel 'notification'
         $emitter->emit('notification', [
             'title' => $title,
-            'date' => new \DateTime('now'),
+            'date' => $now->format('Y-m-d H:i:s'),
             'author' => $this->getUser()->getUsername(),
             'objet' => $entity->getTitle(),
             'criticity' => $criticity,
