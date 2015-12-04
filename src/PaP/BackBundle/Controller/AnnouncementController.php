@@ -2,19 +2,17 @@
 
 namespace PaP\BackBundle\Controller;
 
-use PaP\BackBundle\Document\Notifications;
 use PaP\BackBundle\Entity\Announcement;
-use PaP\BackBundle\Form\AnnouncementType;
-use PaP\BackBundle\Form\Handler\AnnouncementHandler;
 use SocketIO\Emitter;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Serializer\Encoder\JsonEncoder;
-use Symfony\Component\Serializer\Encoder\XmlEncoder;
-use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
-use Symfony\Component\Serializer\Serializer;
 
+/**
+ * @todo Make Twig Views more short
+ * Class AnnouncementController
+ * @package PaP\BackBundle\Controller
+ */
 class AnnouncementController extends Controller
 
 {

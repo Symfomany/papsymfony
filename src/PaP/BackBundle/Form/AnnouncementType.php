@@ -2,7 +2,6 @@
 
 namespace PaP\BackBundle\Form;
 
-use PaP\BackBundle\Entity;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;

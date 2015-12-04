@@ -18,8 +18,7 @@ class AnnouncementCommand extends ContainerAwareCommand
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $dm = $this->getContainer()->get('doctrine_mongodb.odm.default_document_manager');
-        $notifs = $dm
-            ->getRepository('BackBundle:Notifications')
+        $dm->getRepository('BackBundle:Notifications')
             ->removeOld('-1 week');
 
     }

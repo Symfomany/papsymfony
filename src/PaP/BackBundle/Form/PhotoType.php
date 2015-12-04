@@ -5,7 +5,6 @@ namespace PaP\BackBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 class PhotoType extends AbstractType
 {
@@ -37,7 +36,7 @@ class PhotoType extends AbstractType
     /**
      * @return string
      */
-    public function getName()
+    public function getBlockPrefix()
     {
         return 'pap_backbundle_photo';
     }
