@@ -8,13 +8,8 @@ sudo: false
 env:
     - SYMFONY_VERSION="2.8.*"
 
-matrix:
-  include:
-    - php: 5.6
-      env: MONGO_VERSION=2.4.9
-
 before_install:
-  - if [ "$MONGO_VERSION" != "" ]; then pecl -q install -f mongo-${MONGO_VERSION}; fi # Use a specific driver version when needed rather than the one shipped by Travis
+  - if [ "$MONGO_VERSION" != "" ]; then pecl -q install -f mongo-2.4.9; fi # Use a specific driver version when needed rather than the one shipped by Travis
   - echo "extension=mongo.so" >> `php --ini | grep "Loaded Configuration" | sed -e "s|.*:\s*||"`
 
 before_script:
@@ -23,7 +18,6 @@ before_script:
   - composer install
 
 script: phpunit -c app
-
 
 cache:
   directories:
