@@ -16,7 +16,6 @@ security:
                   admin:  { password: $2a$12$MKZADm5kwM2iNWa6MJv4JOFWGCXFOerQNRjiuNaix0s2EknmNN0Qy, roles: ['ROLE_ADMIN'] }
 
     firewalls:
-
         secured_area:
             pattern:    ^/
             form_login:
