@@ -4,6 +4,20 @@ php:
   - 5.5
   - 5.6
 
+sudo: false
+
+
+env:
+  global:
+    - MONGODB_VERSION=2.6.10
+
+
+before_script:
+  - sudo pecl install mongo
+  - echo "extension=mongo.so" >> `php --ini | grep "Loaded Configuration" | sed -e "s|.*:\s*||"
+  - /home/travis/.phpenv/versions/5.6/bin/composer self-update
+  - composer install
+
 
 before_install:
   - wget http://fastdl.mongodb.org/linux/mongodb-linux-x86_64-$MONGODB_VERSION.tgz
@@ -13,17 +27,6 @@ before_install:
   - mongod --dbpath=data/db &
   - sleep 3
 
-before_script:
-  - composer self-update
-  - /home/travis/.phpenv/versions/5.6/bin/composer self-update
-  - composer install
-  - sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
-  - echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' | sudo tee /etc/apt/sources.list.d/mongodb.list
-  - sudo apt-get update
-  - sudo apt-get install -y mongodb-org=2.6.6 mongodb-org-server=2.6.6 mongodb-org-shell=2.6.6 mongodb-org-mongos=2.6.6 mongodb-org-tools=2.6.6
-  - sleep 15 #mongo may not respond immediatly
-  - mongo --version
-
 
 script: phpunit --coverage-text
 
@@ -31,13 +34,8 @@ notifications:
   email:
     - julien@meetserious.com
 
-sudo: false
 
 services:
   - redis-server
   - elasticsearch
   - mongodb
-
-env:
-  global:
-    - MONGODB_VERSION=2.6.10
