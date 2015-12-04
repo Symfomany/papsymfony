@@ -7,7 +7,7 @@ use Doctrine\ORM\Event\LifecycleEventArgs;
 use PaP\BackBundle\Document\Notifications;
 use PaP\BackBundle\Entity\Announcement;
 use SocketIO\Emitter;
-use Symfony\Component\Security\Core\SecurityContext;
+use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorage;
 
 
 /**
@@ -24,12 +24,17 @@ class AnnouncementListener{
     /**
      * @var
      */
+    protected $security;
+
+    /**
+     * @var
+     */
     protected $context;
 
     /**
      * @param DocumentManager $dm
      */
-    public function __construct(DocumentManager $dm, SecurityContext $context){
+    public function __construct(DocumentManager $dm, TokenStorage $context){
         $this->dm = $dm;
 
         // remove old
@@ -38,6 +43,7 @@ class AnnouncementListener{
 //            ->removeOld('-1 week');
 
         $this->context = $context;
+        $this->security = $context;
 
     }
 

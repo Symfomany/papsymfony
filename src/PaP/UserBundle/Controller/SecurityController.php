@@ -35,7 +35,7 @@ class SecurityController extends Controller
     }
 
     /**
-     * @Route("/login_check", name="login_check")
+     * @Route("/back/login_check", name="login_check")
      */
     public function loginCheckAction()
     {
@@ -43,7 +43,7 @@ class SecurityController extends Controller
     }
 
     /**
-     * @Route("/logout", name="logout")
+     * @Route("/back/logout", name="logout")
      */
     public function logoutAction()
     {

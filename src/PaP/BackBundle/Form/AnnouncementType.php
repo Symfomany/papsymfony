@@ -41,13 +41,9 @@ class AnnouncementType extends AbstractType
             ->add('activate')
             ->add('user',  EntityType::class,[
                 "expanded"=>false,
-                'class' => 'BackBundle:User',
-                'choice_label' => 'pseudo',
+                'class' => 'BackBundle:User'
 
             ]);
-
-
-//           ->add('options', new OptionsType());
 
     }
 
@@ -65,7 +61,7 @@ class AnnouncementType extends AbstractType
     /**
      * @return string
      */
-    public function getName()
+    public function getBlockPrefix()
     {
         return 'announcement_form';
     }

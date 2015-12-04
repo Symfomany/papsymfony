@@ -78,38 +78,4 @@ class Options
     }
 
     
-
-    /**
-     * Add announcement
-     *
-     * @param \PaP\BackBundle\Entity\Announcement $announcement
-     *
-     * @return Options
-     */
-    public function addAnnouncement(\PaP\BackBundle\Entity\Announcement $announcement)
-    {
-        $this->announcement[] = $announcement;
-
-        return $this;
-    }
-
-    /**
-     * Remove announcement
-     *
-     * @param \PaP\BackBundle\Entity\Announcement $announcement
-     */
-    public function removeAnnouncement(\PaP\BackBundle\Entity\Announcement $announcement)
-    {
-        $this->announcement->removeElement($announcement);
-    }
-
-    /**
-     * Get announcement
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getAnnouncement()
-    {
-        return $this->announcement;
-    }
 }

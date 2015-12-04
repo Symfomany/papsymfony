@@ -42,7 +42,7 @@
             <div class="navbar-btn btn-group">
                 <button data-toggle="dropdown" class="btn btn-sm dropdown-toggle">
                     <span class="ad ad-radio-tower fs14 va-m"></span>
-                    <span class="badge badge-success">[[notifications.length]]</span>
+                    <span class="badge badge-success">[[ ::notifications.length]]</span>
                 </button>
                 <div class="dropdown-menu dropdown-persist w350 animated animated-shorter fadeIn" role="menu">
                     <div class="panel mbn">
@@ -59,9 +59,9 @@
                                     <div class="media" ng-repeat="notification in notifications | filter:query">
                                         <a class="media-left" href="#"> <span class="glyphicon glyphicon-user text-info"></span> </a>
                                         <div class="media-body">
-                                            <h5 class="media-heading">[[notification.object]]
+                                            <h5 class="media-heading">[[ ::notification.object]]
                                                 <small class="text-muted"></small>
-                                            </h5> [[notification.author]] - [[notification.date.date]]
+                                            </h5> [[notification.author]] - [[ ::notification.date.date]]
 
                                         </div>
                                         <div class="media-right">
@@ -216,7 +216,7 @@
                         <span class="fa fa-gear"></span> Settings </a>
                 </li>
                 <li class="dropdown-footer">
-                    <a href="{{ path('logout') }}" class="">
+                    <a id="logout" href="{{ path('logout') }}" class="logout">
                         <span class="fa fa-power-off pr5"></span> Logout </a>
                 </li>
             </ul>

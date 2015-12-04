@@ -16,13 +16,25 @@ security:
                   admin:  { password: $2a$12$MKZADm5kwM2iNWa6MJv4JOFWGCXFOerQNRjiuNaix0s2EknmNN0Qy, roles: ['ROLE_ADMIN'] }
 
     firewalls:
-        secured_area:
+        frontoffice:
             pattern:    ^/
+            anonymous: ~
             form_login:
                 login_path: /login
-                check_path: /login_check
+                check_path: /back/login_check
+                always_use_default_target_path: true
+                default_target_path: /back
             logout:
-                path: logout
+                path: /back/logout
+                target: /back
+        backoffice:
+            pattern:    ^/back
+            security: true
+            form_login:
+                login_path: /login
+                check_path: /back/login_check
+            logout:
+                path: /back/logout
                 target: /back
             anonymous:
 

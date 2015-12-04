@@ -1,7 +1,7 @@
 services:
   pap.backbundle.announcement.listener:
         class: PaP\BackBundle\Listener\AnnouncementListener
-        arguments: ["@doctrine_mongodb.odm.default_document_manager", "@security.context"]
+        arguments: ["@doctrine_mongodb.odm.default_document_manager", "@security.token_storage"]
         tags:
             - { name: doctrine.event_listener, event: postUpdate, method: postUpdate }
             - { name: doctrine.event_listener, event: postPersist, method: postPersist }
