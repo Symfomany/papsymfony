@@ -5,10 +5,8 @@ php:
   - 5.6
 
 sudo: false
-
 env:
-  global:
-    - MONGODB_VERSION=2.6.10
+    - SYMFONY_VERSION="2.8.*"
 
 
 before_script:
@@ -21,8 +19,6 @@ before_script:
   - composer require doctrine/mongodb-odm:"1.0.*@dev" --no-update
   - composer require doctrine/mongodb-odm-bundle:"3.0.*@dev" --no-update
   - composer install
-
-
 
 script: phpunit --coverage-text
 
