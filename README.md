@@ -10,4 +10,3 @@ Deploy on plateform.sh
 
 ![GitHub Logo](/screen/img1.png)
 ![GitHub Logo](/screen/img2.png)
-Format: ![Alt Text](url)
