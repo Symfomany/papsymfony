@@ -3,6 +3,14 @@ php:
   - 5.5
   - 5.6
 
+ before_install:
+  - wget http://fastdl.mongodb.org/linux/mongodb-linux-x86_64-$MONGODB_VERSION.tgz
+  - tar xfz mongodb-linux-x86_64-$MONGODB_VERSION.tgz
+  - export PATH=`pwd`/mongodb-linux-x86_64-$MONGODB_VERSION/bin:$PATH
+  - mkdir -p data/db
+  - mongod --dbpath=data/db &
+  - sleep 3
+  
 before_script:
   - composer self-update
   - /home/travis/.phpenv/versions/5.6/bin/composer self-update
@@ -11,7 +19,7 @@ before_script:
   - echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' | sudo tee /etc/apt/sources.list.d/mongodb.list
   - sudo apt-get update
   - sudo apt-get install -y mongodb-org=2.6.6 mongodb-org-server=2.6.6 mongodb-org-shell=2.6.6 mongodb-org-mongos=2.6.6 mongodb-org-tools=2.6.6
-  - sleep 15 #mongo may not be responded directly. See http://docs.travis-ci.com/user/database-setup/#MongoDB
+  - sleep 15 #mongo may not respond immediatly
   - mongo --version
 
 
@@ -23,5 +31,9 @@ notifications:
 
 services:
   - redis-server
-  - mongodb
   - elasticsearch
+  - mongodb
+
+env:
+  global:
+    - MONGODB_VERSION=2.6.10
