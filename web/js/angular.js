@@ -6,7 +6,7 @@ var addApp = angular.module('addApp', []).config(function($interpolateProvider){
 });
 
 addApp.controller('NotificationsCtrl',['$scope','$http',
-    function ($scope, $http) { 
+    function ($scope, $http) {
 
         var socket = io('http://127.0.0.1:8081');
 
