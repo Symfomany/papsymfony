@@ -16,9 +16,9 @@ before_script:
   - mysql -e "create database IF NOT EXISTS pap;" -uroot
   - /home/travis/.phpenv/versions/5.6/bin/composer self-update
   - composer self-update
-  - composer install
-  - php bin/console doctrine:schema:update --force
-  - php bin/console doctrine:fixtures:load --append
+  - composer install --prefer-source --no-interaction --dev
+  - php app/console doctrine:schema:update --force
+  - php app/console doctrine:fixtures:load --append
 
 script: phpunit -c app
 
