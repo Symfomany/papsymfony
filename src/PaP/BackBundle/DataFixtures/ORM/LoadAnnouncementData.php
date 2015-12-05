@@ -13,18 +13,10 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  * Class LoadAnnouncementData
  * @package PaP\BackBundle\DataFixtures\ORM
  */
-class LoadAnnouncementData extends AbstractFixture implements OrderedFixtureInterface, FixtureInterface, ContainerAwareInterface
+class LoadAnnouncementData extends AbstractFixture implements OrderedFixtureInterface, FixtureInterface
 {
 
-    /**
-     * @var ContainerInterface
-     */
-    private $container;
 
-    public function setContainer(ContainerInterface $container = null)
-    {
-        $this->container = $container;
-    }
 
     public function load(ObjectManager $manager)
     {
