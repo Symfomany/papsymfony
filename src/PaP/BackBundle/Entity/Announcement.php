@@ -217,6 +217,21 @@ class Announcement
     protected $activate;
 
     /**
+     * @var datetime $fromDate
+     *
+     * @ORM\Column(type="datetime", name="from_date")
+     */
+    protected $fromDate;
+
+    /**
+     * @var datetime $toDate
+     *
+     * @ORM\Column(type="datetime", name="to_date")
+     */
+    protected $toDate;
+
+
+    /**
      * @var datetime $createdAt
      *
      * @ORM\Column(type="datetime", name="created_at")
@@ -253,8 +268,9 @@ class Announcement
 
         $this->photo = new ArrayCollection();
         $this->options = new ArrayCollection();
-
-
+        $this->fromDate = new \DateTime('now');
+        $this->toDate = new \DateTime('+1 year');
+        $this->activate = true;
     }
 
     /**
@@ -529,7 +545,7 @@ class Announcement
      */
     public function setSurface($surface)
     {
-        $this->surface = $surface;
+        $this->surface = (float)$surface;
 
         return $this;
     }
@@ -553,7 +569,7 @@ class Announcement
      */
     public function setNbrooms($nbrooms)
     {
-        $this->nbrooms = $nbrooms;
+        $this->nbrooms = (int)$nbrooms;
 
         return $this;
     }
@@ -577,7 +593,7 @@ class Announcement
      */
     public function setBedrooms($bedrooms)
     {
-        $this->bedrooms = $bedrooms;
+        $this->bedrooms = (int)$bedrooms;
 
         return $this;
     }
@@ -601,7 +617,7 @@ class Announcement
      */
     public function setPricePerMeterSquare($pricePerMeterSquare)
     {
-        $this->pricePerMeterSquare = $pricePerMeterSquare;
+        $this->pricePerMeterSquare = (float)$pricePerMeterSquare;
 
         return $this;
     }
@@ -808,7 +824,7 @@ class Announcement
      */
     public function setActivate($activate)
     {
-        $this->activate = $activate;
+        $this->activate = (bool)$activate;
 
         return $this;
     }
@@ -901,5 +917,53 @@ class Announcement
         $this->file = null;
 
 
+    }
+
+    /**
+     * Set fromDate
+     *
+     * @param \DateTime $fromDate
+     *
+     * @return Announcement
+     */
+    public function setFromDate($fromDate)
+    {
+        $this->fromDate = $fromDate;
+
+        return $this;
+    }
+
+    /**
+     * Get fromDate
+     *
+     * @return \DateTime
+     */
+    public function getFromDate()
+    {
+        return $this->fromDate;
+    }
+
+    /**
+     * Set toDate
+     *
+     * @param \DateTime $toDate
+     *
+     * @return Announcement
+     */
+    public function setToDate($toDate)
+    {
+        $this->toDate = $toDate;
+
+        return $this;
+    }
+
+    /**
+     * Get toDate
+     *
+     * @return \DateTime
+     */
+    public function getToDate()
+    {
+        return $this->toDate;
     }
 }

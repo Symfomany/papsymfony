@@ -2,10 +2,7 @@
 namespace PaP\FrontBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
-use Symfony\Component\BrowserKit\Cookie;
 use Symfony\Component\HttpFoundation\Session\Session;
-use Symfony\Component\HttpFoundation\Session\Storage\MockFileSessionStorage;
-use Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken;
 
 
 /**
@@ -71,7 +68,7 @@ class AnnouncementControllerTest extends WebTestCase
         $client->submit($form);
         $crawler = $client->followRedirect();
         $this->assertRegExp('/\/back/', $client->getRequest()->getUri());
-        dump($client->getRequest()->getUri());
+        //dump($client->getRequest()->getUri());
 
     }
 
@@ -85,26 +82,27 @@ class AnnouncementControllerTest extends WebTestCase
         $form['_username'] = 'admin';
         $form['_password'] = 'admin';
         $client->submit($form);
-        $crawler = $client->followRedirect();
+        $client->followRedirect();
 
         $this->assertRegExp('/\/back/', $client->getRequest()->getUri());
 
-        $crawler = $client->followRedirect();
+         $client->followRedirect();
         $this->assertRegExp('/\/back/', $client->getRequest()->getUri());
         $client->request('GET', '/back');
         $crawler = $client->followRedirect();
 
-
-
         $this->assertTrue($crawler->filter('html:contains("Dashboard")')->count() > 0);
 
-//        $link = $crawler
-//            ->filter('a.logout')
-//            ->eq(1)
-//            ->link();
-//        $client->click($link);
-//        $crawler = $client->followRedirect();
-//        $this->assertRegExp('/\/login$/', $client->getRequest()->getUri());
+        $client->request('GET', '/back');
+        $crawler = $client->followRedirect();
+
+        $link = $crawler
+            ->filter('a.logout')
+            ->eq(0)
+            ->link();
+        $client->click($link);
+        $crawler = $client->followRedirect();
+        $this->assertTrue($crawler->filter('html:contains("Username")')->count() > 0);
 
 
     }

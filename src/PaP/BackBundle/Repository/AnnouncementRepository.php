@@ -11,10 +11,14 @@ namespace PaP\BackBundle\Repository;
 class AnnouncementRepository extends \Doctrine\ORM\EntityRepository
 {
 
+    /**
+     * Get ALl Announcements by criteria
+     * @param string $order
+     * @param string $dir
+     * @return array
+     */
     public function getAllByCriteria($order = "createdAt", $dir ="DESC")
     {
-
-
         $query = $this->createQueryBuilder("an")
             ->select( 'an.id','an.title','an.ref','an.price', 'an.photo', 'an.activate')
             ->orderBy("an.{$order}", "{$dir}")

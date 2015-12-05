@@ -217,6 +217,21 @@ class Announcement
     protected $activate;
 
     /**
+     * @var datetime $fromDate
+     *
+     * @ORM\Column(type="datetime", name="from_date")
+     */
+    protected $fromDate;
+
+    /**
+     * @var datetime $toDate
+     *
+     * @ORM\Column(type="datetime", name="to_date")
+     */
+    protected $toDate;
+
+
+    /**
      * @var datetime $createdAt
      *
      * @ORM\Column(type="datetime", name="created_at")

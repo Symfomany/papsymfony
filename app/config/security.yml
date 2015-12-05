@@ -26,18 +26,26 @@ security:
                 default_target_path: /back
             logout:
                 path: /back/logout
-                target: /back
+                target: /login
+            remember_me:
+                secret:   "%secret%"
+                lifetime: 804800 # 1 week in seconds
+                path:     /back
         backoffice:
             pattern:    ^/back
             security: true
             form_login:
                 login_path: /login
                 check_path: /back/login_check
+                always_use_default_target_path: true
+                default_target_path: /back
             logout:
                 path: /back/logout
-                target: /back
-            anonymous:
-
+                target: /login
+            remember_me:
+                secret:   "%secret%"
+                lifetime: 804800 # 1 week in seconds
+                path:     /back
     access_control:
       - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
       - {path:  ^/back, roles: ROLE_ADMIN}

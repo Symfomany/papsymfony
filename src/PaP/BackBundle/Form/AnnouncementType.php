@@ -2,14 +2,19 @@
 
 namespace PaP\BackBundle\Form;
 
-use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Form\FormTypeInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
-class AnnouncementType extends AbstractType
+/**
+ * Class AnnouncementType
+ * @package PaP\BackBundle\Form
+ */
+class AnnouncementType extends AbstractType implements FormTypeInterface
 {
     /**
      * @param FormBuilderInterface $builder
@@ -37,12 +42,13 @@ class AnnouncementType extends AbstractType
             ->add('bedrooms')
             ->add('pricePerMeterSquare')
             ->add('content')
-            ->add('activate')
-            ->add('user',  EntityType::class,[
-                "expanded"=>false,
-                'class' => 'BackBundle:User'
-
-            ]);
+            ->add('activate');
+//            ->add('user',  EntityType::class,[
+//                'expanded'=>false,
+//                'class' => 'PaPBackBundle:User',
+//                'choice_label' => 'username',
+//
+//            ]);
 
     }
 

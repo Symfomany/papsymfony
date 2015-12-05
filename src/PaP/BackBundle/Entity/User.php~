@@ -2,6 +2,7 @@
 
 namespace PaP\BackBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -68,10 +69,7 @@ class User
 
     public function __construct()
     {
-
         $this->announcement = new ArrayCollection();
-
-
     }
 
 

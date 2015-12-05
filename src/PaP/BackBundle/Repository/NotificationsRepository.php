@@ -14,11 +14,12 @@ class NotificationsRepository extends DocumentRepository
 
     public function removeOld($interval)
     {
-        return $this->createQueryBuilder()
+        $query= $this->createQueryBuilder()
             ->remove()
-            ->field('date')->gte(new \DateTime($interval))
-            ->getQuery()
-            ->execute();
+            ->field('date')->lte(new \DateTime($interval))
+            ->getQuery();
+
+          return $query->execute();
     }
 
 }
