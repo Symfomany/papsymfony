@@ -38,4 +38,3 @@ services:
   - elasticsearch
   - mongodb
   - mysql
-  

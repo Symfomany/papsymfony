@@ -36,9 +36,10 @@ use Symfony\Component\Console\Tester\CommandTester;
          */
         public function testCreate()
         {
-            $this->markTestSkipped( 'PHPUnit will skip this test method' );
+            //$this->markTestSkipped( 'PHPUnit will skip this test method' );
 
             $em = $this->container->get('doctrine.orm.entity_manager');
+            $user = $em->getRepository("BackBundle:User")->findOneByPseudo("djscrave");
 
             $formData = array(
                 'title' => 'New',
@@ -56,6 +57,7 @@ use Symfony\Component\Console\Tester\CommandTester;
                 'pricePerMeterSquare' => 100,
                 'content' => "Description de mon appartement",
                 'activate' => true,
+                'user' => $user
             );
 
             $announcement = new Announcement();
