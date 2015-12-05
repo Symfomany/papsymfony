@@ -13,9 +13,12 @@ before_install:
   - echo "extension=mongo.so" >> `php --ini | grep "Loaded Configuration" | sed -e "s|.*:\s*||"`
 
 before_script:
+  - mysql -e "create database IF NOT EXISTS pap;" -uroot
   - /home/travis/.phpenv/versions/5.6/bin/composer self-update
   - composer self-update
   - composer install
+  - php bin/console doctrine:schema:update --force
+  - php bin/console doctrine:fixtures:load --append
 
 script: phpunit -c app
 
@@ -32,3 +35,4 @@ services:
   - redis-server
   - elasticsearch
   - mongodb
+  - mysql

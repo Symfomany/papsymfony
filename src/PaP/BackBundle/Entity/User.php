@@ -243,7 +243,7 @@ class User
      */
     public function __toString()
     {
-        return $this->getFirstname();
+        return empty($this->getFirstname()) ? "" : $this->getFirstname();
 
     }
 }

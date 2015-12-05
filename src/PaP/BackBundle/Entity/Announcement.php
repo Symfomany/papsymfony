@@ -271,6 +271,7 @@ class Announcement
         $this->fromDate = new \DateTime('now');
         $this->toDate = new \DateTime('+1 year');
         $this->activate = true;
+        $this->price = 0;
     }
 
     /**
@@ -278,7 +279,7 @@ class Announcement
      */
     public function __toString()
     {
-        return $this->getTitle();
+        return empty($this->getTitle()) ? "" : $this->getTitle();
 
     }
 
@@ -291,11 +292,10 @@ class Announcement
     public function onPrePersist()
     {
 
-//        dump($this->getSurface());
-//        dump($this->getPrice());
-//        dump($this->getPrice()/$this->getSurface());
         $this->createdAt = new \DateTime("now");
-        $this->pricePerMeterSquare = $this->getPrice()/$this->getSurface();
+        if($this->getSurface()){
+            $this->pricePerMeterSquare = $this->getPrice()/$this->getSurface();
+        }
     }
 
     /**
@@ -306,8 +306,9 @@ class Announcement
     public function onPreUpdate()
     {
         $this->updatedAt = new \DateTime("now");
-        $this->pricePerMeterSquare = $this->getPrice()/$this->getSurface();
-
+        if($this->getSurface()) {
+            $this->pricePerMeterSquare = $this->getPrice() / $this->getSurface();
+        }
     }
 
     /**

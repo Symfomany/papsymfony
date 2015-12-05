@@ -109,7 +109,7 @@ class AnnouncementListener{
         $notification->setTitle($title);
         $notification->setObject($entity->getTitle());
         $notification->setCriticity($criticity);
-        $notification->setAuthor($this->getUser()->getUsername());
+        $notification->setAuthor($entity->getUser());
 
         $this->dm->persist($notification);
         $this->dm->flush();
@@ -119,11 +119,12 @@ class AnnouncementListener{
         $emitter = new Emitter($redis);
 
         $now = new \DateTime('now');
+
         // Emit a notification on channel 'notification'
         $emitter->emit('notification', [
             'title' => $title,
             'date' => $now->format('Y-m-d H:i:s'),
-            'author' => $this->getUser()->getUsername(),
+            'author' => $entity->getUser()->getPseudo(),
             'objet' => $entity->getTitle(),
             'criticity' => $criticity,
         ]);

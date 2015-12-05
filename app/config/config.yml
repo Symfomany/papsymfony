@@ -92,11 +92,11 @@ fos_elastica:
                     surface: { type: float }
                     nbrooms: { type: string }
                     bedrooms: { type: string }
-                    pricePerMeterSquare: { type: string }
+                    pricePerMeterSquare: { type: float }
                     content: { type: string }
                     activate: { type: string }
-                    createdAt: {type: date, format: "dd-mm-YYYY" }
-                    updatedAt: {type: date, format: "dd-mm-YYYY" }
+                    createdAt: {type: date }
+                    updatedAt: {type: date }
                 persistence:
                     driver: orm
                     model: PaP\BackBundle\Entity\Announcement

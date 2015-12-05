@@ -25,7 +25,7 @@ class AnnouncementType extends AbstractType implements FormTypeInterface
         $builder
             ->add('title')
             ->add('price')
-            ->add('ref')
+            ->add('ref', null, ['attr' => ["placeholder" => "AA-XXXX-B"]])
             ->add('address')
             ->add('city')
             ->add('cp')
