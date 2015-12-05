@@ -42,13 +42,14 @@ class AnnouncementType extends AbstractType implements FormTypeInterface
             ->add('bedrooms')
             ->add('pricePerMeterSquare')
             ->add('content')
-            ->add('activate');
-//            ->add('user',  EntityType::class,[
-//                'expanded'=>false,
-//                'class' => 'PaPBackBundle:User',
-//                'choice_label' => 'username',
-//
-//            ]);
+            ->add('activate')
+            ->add('user',  EntityType::class,[
+                'expanded'=>false,
+                'class' => 'PaPBackBundle:User',
+                'choice_label' => 'username',
+
+            ]);
+
 
     }
 
