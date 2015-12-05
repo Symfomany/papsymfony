@@ -1,5 +1,5 @@
 'use strict';
-
+const BASEURI = window.location.href.substring(0, window.location.href.indexOf('back')+4);
 
 var addApp = angular.module('addApp', []).config(function($interpolateProvider){
     $interpolateProvider.startSymbol('[[').endSymbol(']]');
