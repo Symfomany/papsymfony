@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "dada47256e57776cc12c1ff13518d9c1",
+    "hash": "39a5ba518aca195b723f150ef212204f",
     "content-hash": "9569b54171caf944dfa8efbc3eb85c84",
     "packages": [
         {
@@ -2270,12 +2270,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/symfony.git",
-                "reference": "dd7830314a066e8bc15c7fb1101b28aac13c67ae"
+                "reference": "2b8c9f826992b782682e3c4b273ce9256fa1536e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/symfony/zipball/dd7830314a066e8bc15c7fb1101b28aac13c67ae",
-                "reference": "dd7830314a066e8bc15c7fb1101b28aac13c67ae",
+                "url": "https://api.github.com/repos/symfony/symfony/zipball/2b8c9f826992b782682e3c4b273ce9256fa1536e",
+                "reference": "2b8c9f826992b782682e3c4b273ce9256fa1536e",
                 "shasum": ""
             },
             "require": {
@@ -2395,7 +2395,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2015-12-03 09:22:26"
+            "time": "2015-12-05 09:41:19"
         },
         {
             "name": "twig/twig",
@@ -2620,20 +2620,20 @@
         },
         {
             "name": "doctrine/mongodb-odm-bundle",
-            "version": "dev-master",
+            "version": "3.0.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/DoctrineMongoDBBundle.git",
-                "reference": "d66da72d4d43c40f8bf1a1fe6e6852096b72f00c"
+                "reference": "7aef657b4535135adc443bfb8b8d4f1fde15ef64"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/DoctrineMongoDBBundle/zipball/d66da72d4d43c40f8bf1a1fe6e6852096b72f00c",
-                "reference": "d66da72d4d43c40f8bf1a1fe6e6852096b72f00c",
+                "url": "https://api.github.com/repos/doctrine/DoctrineMongoDBBundle/zipball/7aef657b4535135adc443bfb8b8d4f1fde15ef64",
+                "reference": "7aef657b4535135adc443bfb8b8d4f1fde15ef64",
                 "shasum": ""
             },
             "require": {
-                "doctrine/mongodb-odm": "~1.0.0-beta10@dev",
+                "doctrine/mongodb-odm": "~1.0",
                 "php": ">=5.3.2",
                 "symfony/config": "~2.2",
                 "symfony/console": "~2.1",
@@ -2686,7 +2686,7 @@
                 "persistence",
                 "symfony"
             ],
-            "time": "2015-10-05 13:40:46"
+            "time": "2015-12-04 06:50:04"
         },
         {
             "name": "sensio/generator-bundle",

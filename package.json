@@ -1,0 +1,13 @@
+{
+  "name": "papsymfony",
+  "version": "1.0.0",
+  "description": "PaP  Project built Symfony 2.7\r ====",
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^4.13.3",
+    "http": "0.0.0",
+    "socket.io": "^1.3.7",
+    "socket.io-redis": "^0.1.4"
+  }
+}
