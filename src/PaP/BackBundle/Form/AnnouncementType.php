@@ -45,8 +45,8 @@ class AnnouncementType extends AbstractType implements FormTypeInterface
             ->add('activate')
             ->add('user',  EntityType::class,[
                 'expanded'=>false,
-                'class' => 'PaPBackBundle:User',
-                'choice_label' => 'username',
+                'class' => 'BackBundle:User',
+                'choice_label' => 'lastname',
 
             ]);
 
