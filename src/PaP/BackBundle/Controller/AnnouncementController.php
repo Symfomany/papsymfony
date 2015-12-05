@@ -80,7 +80,7 @@ class AnnouncementController extends Controller
 
     /**
      *
-     * 
+     *
      *
      * @param Announcement $offer
      * @return \Symfony\Component\HttpFoundation\Response
@@ -114,6 +114,7 @@ class AnnouncementController extends Controller
 
         if($handler->process($offer))
         {
+
 
             return $handler;
 
