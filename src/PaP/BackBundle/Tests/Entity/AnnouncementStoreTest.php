@@ -1,20 +1,15 @@
 <?php
 namespace PaP\FrontBundle\Tests\Command;
 
-use Doctrine\ODM\MongoDB\DocumentManager;
-use PaP\BackBundle\Command\AnnouncementCommand;
 use PaP\BackBundle\Entity\Announcement;
-use PaP\BackBundle\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
-use Symfony\Component\Console\Application;
-use Symfony\Component\Console\Tester\CommandTester;
 
 /**
  * Test Announcement
  * Class AnnouncementCommandTest
  * @package PaP\FrontBundle\Tests\Command
  */
-    class AnnouncementTest extends KernelTestCase{
+    class AnnouncementStoreTest extends KernelTestCase{
 
         /**
          * @var container
@@ -31,18 +26,33 @@ use Symfony\Component\Console\Tester\CommandTester;
             $this->container = self::$kernel->getContainer();
         }
 
-        /**
-         * Execute
-         */
-        public function testCreate()
-        {
-            //$this->markTestSkipped( 'PHPUnit will skip this test method' );
 
+
+        public function getDatas()
+        {
+            return array(
+                array("Annonce A"),
+                array("Annonce B"),
+                array("Annonce C"),
+                array("Annonce D"),
+                array("Annonce E"),
+            );
+        }
+
+        /**
+         * The application contains a lot of secure URLs which shouldn't be
+         * publicly accessible. This tests ensures that whenever a user tries to
+         * access one of those pages, a redirection to the login form is performed.
+         *
+         * @dataProvider getDatas
+         */
+        public function testCreate($datas)
+        {
             $em = $this->container->get('doctrine.orm.entity_manager');
             $user = $em->getRepository("BackBundle:User")->findOneByPseudo("djscrave");
 
             $formData = array(
-                'title' => 'New',
+                'title' => $datas,
                 'price' => 23.55,
                 'ref' => "BB-5555-A",
                 'city' => "Paris",
@@ -77,12 +87,21 @@ use Symfony\Component\Console\Tester\CommandTester;
             $announcement->setPricePerMeterSquare((float)$formData['pricePerMeterSquare']);
             $announcement->setActivate($formData['activate']);
             $announcement->setUser($formData['user']);
+            $em->persist($announcement);
+            $em->flush();
+            $this->assertEquals($datas, $announcement->getTitle());
 
+            $announcement = $em->getRepository("BackBundle:Announcement")->findOneByTitle($datas);
+            $announcement->setTitle("New B");
             $em->persist($announcement);
             $em->flush();
 
+            $this->assertEquals("New B", $announcement->getTitle());
+            $em->remove($announcement);
+            $em->flush();
+            $announcement = $em->getRepository("BackBundle:Announcement")->findOneByTitle("New B");
 
-
+            $this->assertEquals(null, $announcement);
         }
 
 

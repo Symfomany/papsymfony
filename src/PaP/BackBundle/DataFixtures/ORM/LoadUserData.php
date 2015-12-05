@@ -6,7 +6,6 @@ use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use PaP\BackBundle\Entity\User;
-use Symfony\Component\DependencyInjection\ContainerAwareInterface;
 
 class LoadUserData extends AbstractFixture implements OrderedFixtureInterface, FixtureInterface
 {

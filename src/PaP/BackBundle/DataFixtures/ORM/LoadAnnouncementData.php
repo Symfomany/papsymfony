@@ -6,7 +6,6 @@ use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use PaP\BackBundle\Entity\Announcement;
-use Symfony\Component\DependencyInjection\ContainerAwareInterface;
 
 /**
  * Class LoadAnnouncementData

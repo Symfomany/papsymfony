@@ -3,7 +3,6 @@ namespace PaP\FrontBundle\Tests\Form;
 
 use PaP\BackBundle\Entity\Announcement;
 use PaP\BackBundle\Form\AnnouncementType;
-use Symfony\Bridge\Doctrine\Test\DoctrineTestHelper;
 use Symfony\Component\Form\Test\TypeTestCase;
 use Symfony\Component\Form\Tests\Extension\Core\Type;
 

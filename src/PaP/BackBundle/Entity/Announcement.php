@@ -745,9 +745,6 @@ class Announcement
     }
 
 
-
-
-
     /**
      * Get photo
      *
