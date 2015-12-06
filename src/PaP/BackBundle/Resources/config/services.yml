@@ -1,20 +1,24 @@
 services:
 
+    # Old Announcement Commande
     announcement_command:
         class: PaP\BackBundle\Command\AnnouncementCommand
         arguments: ["@doctrine_mongodb.odm.default_document_manager"]
         tags:
-            -  { name: console.command }
+            - { name: console.command }
 
+    # Form Announcement
     announcement_form:
-            class: PaP\BackBundle\Form\AnnouncementType
-            tags:
-                - { name: form.type }
+        class: PaP\BackBundle\Form\AnnouncementType
+        tags:
+            - { name: form.type }
 
+    # Handler Announcement
     announcement_handler:
         class: PaP\BackBundle\Form\Handler\AnnouncementHandler
         arguments: ["@form.factory", "@request_stack", "@doctrine.orm.entity_manager"]
 
+    # Notification handler
     notification_handler:
         class: PaP\BackBundle\Notification\Notification
         arguments: ["@form.factory", "@request_stack", "@doctrine.orm.entity_manager"]

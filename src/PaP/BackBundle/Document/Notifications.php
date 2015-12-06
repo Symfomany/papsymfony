@@ -91,7 +91,6 @@ class Notifications
     }
 
 
-
     /**
      * @return mixed
      */

@@ -6,8 +6,13 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Doctrine\ODM\MongoDB\DocumentManager;
 
+/**
+ * Class AnnouncementCommand
+ * @package PaP\BackBundle\Command
+ */
 class AnnouncementCommand extends Command
 {
+
     /**
      * @var DocumentManager
      */
@@ -33,7 +38,6 @@ class AnnouncementCommand extends Command
     }
 
     /**
-     *
      * @param InputInterface $input
      * @param OutputInterface $output
      */

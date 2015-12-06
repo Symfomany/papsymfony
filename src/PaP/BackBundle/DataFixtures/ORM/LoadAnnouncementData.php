@@ -14,8 +14,10 @@ use PaP\BackBundle\Entity\Announcement;
 class LoadAnnouncementData extends AbstractFixture implements OrderedFixtureInterface, FixtureInterface
 {
 
-
-
+    /**
+     * load Announcement
+     * @param ObjectManager $manager
+     */
     public function load(ObjectManager $manager)
     {
         $formData = array(
@@ -59,6 +61,10 @@ class LoadAnnouncementData extends AbstractFixture implements OrderedFixtureInte
 
     }
 
+    /**
+     * get order
+     * @return int
+     */
     public function getOrder()
     {
         return 2;

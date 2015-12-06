@@ -2,20 +2,22 @@
 # http://symfony.com/doc/current/book/security.html
 security:
 
-
+    # Encoding password
     encoders:
         Symfony\Component\Security\Core\User\User:
             algorithm: bcrypt
             cost: 12
 
-    # http://symfony.com/doc/current/book/security.html#where-do-users-come-from-user-providers
+    # Provide user
     providers:
         in_memory:
             memory:
                 users:
                   admin:  { password: %password%, roles: ['ROLE_ADMIN'] }
 
+    # All Firewalls
     firewalls:
+
         frontoffice:
             pattern:    ^/
             anonymous: ~
@@ -31,6 +33,7 @@ security:
                 secret:   "%secret%"
                 lifetime: 804800 # 1 week in seconds
                 path:     /back
+
         backoffice:
             pattern:    ^/back
             security: true

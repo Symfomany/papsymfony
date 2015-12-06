@@ -5,7 +5,6 @@ imports:
     - { resource: "@BackBundle/Resources/config/config.yml" }
 
 # Put parameters here that don't need to change on each machine where the app is deployed
-# http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: fr
 
@@ -19,7 +18,7 @@ framework:
     form:            ~
     csrf_protection: ~
     validation:      { enable_annotations: true }
-    #serializer:      { enable_annotations: true }
+    #serializer:      { enable_annotations: true } to serialize an object like entity
     templating:
         engines: ['twig']
         #assets_version: SomeVersionScheme

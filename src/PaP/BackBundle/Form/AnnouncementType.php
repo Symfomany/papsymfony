@@ -22,6 +22,7 @@ class AnnouncementType extends AbstractType implements FormTypeInterface
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+
         $builder
             ->add('title')
             ->add('price')
@@ -49,8 +50,6 @@ class AnnouncementType extends AbstractType implements FormTypeInterface
                 'choice_label' => 'lastname',
 
             ]);
-
-
     }
 
 

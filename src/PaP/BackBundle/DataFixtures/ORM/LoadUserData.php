@@ -7,10 +7,17 @@ use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use PaP\BackBundle\Entity\User;
 
+/**
+ * Class LoadUserData
+ * @package PaP\BackBundle\DataFixtures\ORM
+ */
 class LoadUserData extends AbstractFixture implements OrderedFixtureInterface, FixtureInterface
 {
 
-
+    /**
+     * load data
+     * @param ObjectManager $manager
+     */
     public function load(ObjectManager $manager)
     {
         $formData = array(
@@ -35,6 +42,10 @@ class LoadUserData extends AbstractFixture implements OrderedFixtureInterface, F
 
     }
 
+    /**
+     * get Order
+     * @return int
+     */
     public function getOrder()
     {
         return 1;

@@ -19,8 +19,7 @@ class PhotoType extends AbstractType
 
                 'required'=> false
             ])
-            ->add('title')
-        ;
+            ->add('title') ;
     }
 
     /**

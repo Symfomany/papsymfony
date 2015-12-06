@@ -37,11 +37,6 @@ class AnnouncementListener{
     public function __construct(DocumentManager $dm, TokenStorage $context){
         $this->dm = $dm;
 
-        // remove old
-//        $this->dm
-//            ->getRepository('BackBundle:Notifications')
-//            ->removeOld('-1 week');
-
         $this->context = $context;
         $this->security = $context;
 
@@ -120,7 +115,6 @@ class AnnouncementListener{
 
         $now = new \DateTime('now');
 
-        // Emit a notification on channel 'notification'
         $emitter->emit('notification', [
             'title' => $title,
             'date' => $now->format('Y-m-d H:i:s'),
@@ -133,6 +127,10 @@ class AnnouncementListener{
     }
 
 
+    /**
+     * Get a user
+     * @return mixed
+     */
     public function getUser()
     {
         return $this->context->getToken()->getUser();

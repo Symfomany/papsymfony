@@ -12,6 +12,10 @@ use Doctrine\ODM\MongoDB\DocumentRepository;
 class NotificationsRepository extends DocumentRepository
 {
 
+    /**
+     * @param $interval
+     * @return mixed
+     */
     public function removeOld($interval)
     {
         $query= $this->createQueryBuilder()

@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="fr" ng-app="addApp">
 
@@ -10,8 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     {% block stylesheets %}
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
         <link rel="stylesheet" type="text/css" href="{{ asset('vendor/plugins/select2/css/core.css') }}">
         <link rel='stylesheet' type='text/css' href='{{ asset("bundles/back/css/theme.css") }}'>
         <link rel='stylesheet' type='text/css' href='{{ asset("dist/css/mainsass.min.css") }}'>
@@ -19,7 +16,6 @@
     {% endblock %}
 
     <script src="{{ asset("assets/js/angular.min.js") }}"></script>
-
 
 </head>
 
@@ -29,18 +25,12 @@
 <body class="blank-page">
 
 
-
-
 <!-- Start: Main -->
 <div id="main">
 
     <!-- Start: Header -->
     {% include 'BackBundle:Partials:header.html.twig'%}
     <!-- End: Header -->
-
-    <!-- Start: Sidebar -->
-
-    {% include 'BackBundle:Partials:navbar.html.twig'%}
 
 
     <!-- Start: Content-Wrapper -->
@@ -53,7 +43,6 @@
         <!-- Start: Topbar-Dropdown -->
         {% include 'BackBundle:Partials:userdropdown.html.twig'%}
         <!-- End: Topbar-Dropdown -->
-
 
         <!-- Start: Topbar -->
         {% include 'BackBundle:Partials:breadcrumbbar.html.twig'%}
@@ -77,9 +66,9 @@
 </div>
 <!-- End: Main -->
 
-<!-- BEGIN: PAGE SCRIPTS -->
 
 {% block javascripts %}
+
 <!-- jQuery -->
 <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
@@ -94,6 +83,7 @@
 <script src="{{ asset("bundles/back/js/demo/demo.js") }}"></script>
 <script src="{{ asset("bundles/back/js/main.js") }}"></script>
 <script src="{{ asset("dist/js/angular.min.js") }}"></script>
+
 <script type="text/javascript">
     jQuery(document).ready(function() {
 
@@ -105,7 +95,6 @@
         // launch initialisation
         Demo.init();
 
-
         var socket = io('http://127.0.0.1:8081');
 
         socket.on('notification', function (data) {
@@ -114,15 +103,15 @@
                 text: data.objet,
                 type: data.criticity,
                 shadow: true,
-                opacity: 0.80,
+                opacity: 0.80
             });
         });
-
 
     });
 </script>
 <!-- END: PAGE SCRIPTS -->
 {% endblock %}
+
 </body>
 
 </html>

@@ -7,7 +7,6 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * User
- *
  * @ORM\Table(name="user")
  * @ORM\Entity(repositoryClass="PaP\BackBundle\Repository\UserRepository")
  */
@@ -66,7 +65,9 @@ class User
     protected $announcement;
 
 
-
+    /**
+     * Constructor
+     */
     public function __construct()
     {
         $this->announcement = new ArrayCollection();

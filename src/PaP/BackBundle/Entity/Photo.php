@@ -6,7 +6,6 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
 
-
 /**
  * Photo
  *
@@ -43,11 +42,9 @@ class Photo
      * @Assert\Image(
      *     allowLandscape = true,
      *     allowPortrait = true,
-     *
      *     maxSize = "2000k",
      *     mimeTypes = {"image/jpeg", "image/png","image/gif"},
      *     mimeTypesMessage = "Please upload a valid image jpeg,png or gif format"
-
      * )
      *
      */

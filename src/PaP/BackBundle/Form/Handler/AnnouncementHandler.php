@@ -49,13 +49,13 @@ class AnnouncementHandler
 
         if($this->form->isValid())
         {
-
             $this->uploadAndStore();
+
             return true;
 
         }
-        return false;
 
+        return false;
 
     }
 
@@ -78,8 +78,8 @@ class AnnouncementHandler
         $this->form = $form;
     }
 
-    /*
-     * Handle storing to database
+    /**
+     * Upload and store
      */
     protected function uploadAndStore()
     {
@@ -90,9 +90,10 @@ class AnnouncementHandler
         $this->em->flush();
     }
 
-
-
-
+    /**
+     * Generate a form
+     * @param Announcement $offer
+     */
     public function generateForm(Announcement $offer)
     {
 

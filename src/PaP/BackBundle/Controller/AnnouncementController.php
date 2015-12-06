@@ -14,14 +14,10 @@ use Symfony\Component\HttpFoundation\Request;
  * @package PaP\BackBundle\Controller
  */
 class AnnouncementController extends Controller
-
 {
     /**
-     *
      * Allows to see all Announcements
-     *
      * @return \Symfony\Component\HttpFoundation\Response
-     *
      */
     public function indexAction()
     {
@@ -32,7 +28,7 @@ class AnnouncementController extends Controller
         return $this->render("BackBundle:Announcement:index.html.twig",["offers" => $offers]);
     }
 
-  /**
+    /**
      *
      * Allows to ajax all Announcements
      *
@@ -79,9 +75,6 @@ class AnnouncementController extends Controller
 
 
     /**
-     *
-     *
-     *
      * @param Announcement $offer
      * @return \Symfony\Component\HttpFoundation\Response
      */
@@ -89,7 +82,6 @@ class AnnouncementController extends Controller
     {
 
         return $this->render("BackBundle:Announcement:show.html.twig",["offer"=>$offer]);
-
     }
 
     /**
@@ -102,23 +94,23 @@ class AnnouncementController extends Controller
      */
     public function createAction(Request $request)
     {
-
         $handler = $this->handler("Votre annonce a bien été crée", new Announcement());
 
         return $this->render("BackBundle:Announcement:create.html.twig",["formOffer"=> $handler->getForm()->createView()]);
     }
 
 
+    /**
+     * @param string $message
+     * @param $offer
+     * @return object
+     */
     protected function handler($message = "", $offer){
         $handler = $this->get('announcement_handler');
 
         if($handler->process($offer))
         {
-
-
             return $handler;
-
-
         }
 
         return $handler;
@@ -126,14 +118,12 @@ class AnnouncementController extends Controller
 
     /**
      * Allows to edit an announcement
-     *
      * @param $id
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
      */
     public function editAction(Announcement $offer, Request $request)
     {
-
         $handler = $this->handler("Votre annonce a bien été editée", $offer);
 
         return $this->render('BackBundle:Announcement:edit.html.twig', ["formOffer"=> $handler->getForm()->createView()]);
@@ -148,10 +138,8 @@ class AnnouncementController extends Controller
         if (!$offer) {
             throw $this->createNotFoundException('Unable to find announcement to delete.');
         }
-//         Code de la suppression
         $em->remove($offer);
         $em->flush();
-
 
         if($request->isXmlHttpRequest())
         {
@@ -178,5 +166,6 @@ class AnnouncementController extends Controller
             ->add("success","Your offer has been updated");
 
         return $this->redirect($this->generateUrl("back_announcement_index"));
+
     }
 }

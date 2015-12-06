@@ -3,6 +3,7 @@
 {% block title "Annoucement Create" %}
 
 {%  block stylesheets %}
+
     {{ parent() }}
     <!-- Theme CSS -->
     <link rel="stylesheet" type="text/css" href="{{ asset("bundles/back/css/theme.css") }}">
@@ -14,29 +15,22 @@
 
 {% block content %}
 
-
     <div class="admin-form theme-primary mw1000 center-block" style="padding-bottom: 175px;">
-
         <div class="panel heading-border">
-
-                 {% include 'BackBundle:Announcement:form.html.twig'%}
-
-
+            {% include 'BackBundle:Announcement:form.html.twig'%}
         </div>
-
-    </div>
     </div>
 
     {#{{ form(formOffer) }}#}
-
-
 {% endblock %}
+
 
 {% block javascripts %}
 
     {{ parent() }}
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+
     <!-- jQuery Validate Plugin-->
     <script src="{{ asset("bundles/back/js/jquery.validate.min.js") }}"></script>
     <script src="{{ asset("vendor/plugins/select2/select2.min.js") }}"></script>

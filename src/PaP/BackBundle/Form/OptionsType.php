@@ -6,8 +6,13 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
+/**
+ * Class OptionsType
+ * @package PaP\BackBundle\Form
+ */
 class OptionsType extends AbstractType
 {
+
     /**
      * @param FormBuilderInterface $builder
      * @param array $options

@@ -70,6 +70,7 @@ use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
                 'user' => $user
             );
 
+
             $announcement = new Announcement();
             $announcement->setTitle($formData['title']);
             $announcement->setPrice((float)$formData['price']);
